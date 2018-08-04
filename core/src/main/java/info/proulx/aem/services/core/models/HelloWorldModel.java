@@ -22,10 +22,12 @@ import javax.inject.Named;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.jcr.resource.api.JcrResourceConstants;
 import org.apache.sling.models.annotations.Default;
+import org.apache.sling.models.annotations.Exporter;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.settings.SlingSettingsService;
 
-@Model(adaptables=Resource.class)
+@Model(adaptables=Resource.class, resourceType = "services101/components/content/helloworld")
+@Exporter( name = "jackson", extensions = "json" )
 public class HelloWorldModel {
 
     @Inject
