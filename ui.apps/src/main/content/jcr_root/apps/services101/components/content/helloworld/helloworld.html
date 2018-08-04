@@ -13,9 +13,15 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */-->
-<p data-sly-test="${properties.text}">Text property: ${properties.text}</p>
+<div class="helloworld"
+     data-sly-use.hello="info.proulx.aem.services.core.models.HelloWorldModel"
+     data-uri="${hello.modelUri}">
 
-<pre data-sly-use.hello="info.proulx.aem.services.core.models.HelloWorldModel">
-HelloWorldModel says:
-${hello.message}
-</pre>
+    <p data-sly-test="${properties.text}">Text property: ${properties.text}</p>
+
+    <pre>
+    HelloWorldModel says:
+    ${hello.message}
+    </pre>
+
+</div>

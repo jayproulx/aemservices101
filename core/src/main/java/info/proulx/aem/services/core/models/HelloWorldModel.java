@@ -24,6 +24,7 @@ import org.apache.sling.jcr.resource.api.JcrResourceConstants;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Exporter;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.apache.sling.settings.SlingSettingsService;
 
 @Model(adaptables=Resource.class, resourceType = "services101/components/content/helloworld")
@@ -32,6 +33,9 @@ public class HelloWorldModel {
 
     @Inject
     private SlingSettingsService settings;
+
+    @Self
+    private Resource resource;
 
     @Inject @Named(JcrResourceConstants.SLING_RESOURCE_TYPE_PROPERTY) @Default(values="No resourceType")
     protected String resourceType;
@@ -43,6 +47,14 @@ public class HelloWorldModel {
         message = "\tHello World!\n";
         message += "\tThis is instance: " + settings.getSlingId() + "\n";
         message += "\tResource type is: " + resourceType + "\n";
+    }
+
+    public String getModelUri() {
+        return resource.getPath() + ".model.json";
+    }
+
+    public String getHelloWorld() {
+        return "Hello World";
     }
 
     public String getMessage() {
