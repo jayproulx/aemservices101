@@ -14,8 +14,7 @@
     limitations under the License.
 */-->
 <div class="helloworld"
-     data-sly-use.hello="info.proulx.aem.services.core.models.HelloWorldModel"
-     data-uri="${hello.modelUri}">
+     data-sly-use.hello="info.proulx.aem.services.core.models.HelloWorldModel">
 
     <p data-sly-test="${properties.text}">Text property: ${properties.text}</p>
 
@@ -23,5 +22,7 @@
     HelloWorldModel says:
     ${hello.message}
     </pre>
+
+    <helloworldmessage model-uri="${hello.modelUri}"></helloworldmessage>
 
 </div>

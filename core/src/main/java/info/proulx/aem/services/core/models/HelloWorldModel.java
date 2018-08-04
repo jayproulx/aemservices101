@@ -50,7 +50,7 @@ public class HelloWorldModel {
     }
 
     public String getModelUri() {
-        return resource.getPath() + ".model.json";
+        return resource.getPath() + ".model.tidy.json";
     }
 
     public String getHelloWorld() {
