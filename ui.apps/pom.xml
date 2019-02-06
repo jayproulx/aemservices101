@@ -114,6 +114,29 @@
                 <groupId>org.apache.sling</groupId>
                 <artifactId>htl-maven-plugin</artifactId>
             </plugin>
+
+            <!-- jgitflow plugin -->
+            <plugin>
+                <groupId>external.atlassian.jgitflow</groupId>
+                <artifactId>jgitflow-maven-plugin</artifactId>
+                <version>1.0-m5.1</version>
+                <configuration>
+                    <noDeploy>true</noDeploy>
+                    <useReleaseProfile>false</useReleaseProfile>
+                    <enableSshAgent>true</enableSshAgent>
+                    <pushFeatures>false</pushFeatures>
+                    <pushHotfixes>false</pushHotfixes>
+                    <pushReleases>false</pushReleases>
+                    <flowInitContext>
+                        <masterBranchName>master</masterBranchName>
+                        <developBranchName>develop</developBranchName>
+                        <featureBranchPrefix>feature/</featureBranchPrefix>
+                        <releaseBranchPrefix>release/</releaseBranchPrefix>
+                        <hotfixBranchPrefix>hotfix/</hotfixBranchPrefix>
+                        <versionTagPrefix>v</versionTagPrefix>
+                    </flowInitContext>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
